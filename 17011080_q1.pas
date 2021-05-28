@@ -13,18 +13,18 @@ passt2:='abcdefghijklmnoprstuvyzwxq';
 passt3 := 'abcdefghijklmnoprstuvyzwxq0123456789';
 passt4:='abcdefghijklmnoprstuvyzwxqABCDEFGHIJKLMNOPRSTUVYZXWQ0123456789';
 uzunluk := 0;
-pass := '';                                                                                    {Random komutuyla þifre oluþtururken ve oluþturulan þifreyi çözümlerken
-                                                                                                  ihtiyacým olan stringlerin elemanlarýný burda tanýmladým.}
+pass := '';                                                                                    
+                                                                                                  
 randomize ;
 while (uzunluk<>4) and (uzunluk <> 6 ) and (uzunluk <> 8) do
-begin                                                                                {Kullanici hatalarýndan kurtulmak icin uzunluklarý while in icinde yazdim.}
+begin                                                                                
 writeln('Istenen sifre uzunlugunu giriniz.');
 writeln('4,6,8 rakamlarindan biri secilmelidir.');
 readln(uzunluk);
 end;
 passt:= 0 ;
-while (passt<>1) and (passt<>2) and (passt<>3) and (passt<> 4) do                            {Tekrardan kullanýcý istenen karakterden baþka karaktere bastýðýnda programýn hata
-                                                                                                 vermemesi için while kullandým.}
+while (passt<>1) and (passt<>2) and (passt<>3) and (passt<> 4) do                            
+                                                                                                 
 begin
 writeln('Sadece rakam icin 1');
 writeln('Sadece kucuk harf icin 2 ');
@@ -43,7 +43,7 @@ end
  else
   if passt = 1 then begin
 for i:=1 to uzunluk do
-pass := pass+passt1[random(10)+1];                                                                 {Ýstenilen tür þifreye göre gerekli olan if koluna gidiyor .}
+pass := pass+passt1[random(10)+1];                                                            
 end
 else
 if passt=2 then begin
@@ -62,10 +62,10 @@ count :=0 ; tahmin:='';
 datetimetosystemtime(now,st);
 with st do begin
 ms1:=millisecond;
-s1:= second;                                                                            {Çözümlemenin baþladýðý zamaný almak için gereken komutlar.}
+s1:= second;                                                                            
 d1:=minute;
 end;
-if passt=1 then begin                                                                   {Þifre burda sistemin atadýðý random sayilara göre çözümleniyor.}
+if passt=1 then begin                                                                   
 while tahmin <>pass do begin
 tahmin:='';
 for i := 1 to uzunluk do
@@ -96,7 +96,7 @@ end; end;
 datetimetosystemtime(now,st);
 with st do
 begin
-ms2:=millisecond;                                                                     {Çözümleme bittikten sonra tekrar sistemden zaman bilgisi alýnýyor.}
+ms2:=millisecond;                                                                     
 s2:=second;
 d2:=minute;
 end;
